@@ -1,5 +1,5 @@
+@charset "UTF-8";
 /* Стандартный сброс, создание переменных и их классов. */
-
 :root {
   --color1: #3643d2;
 }
@@ -7,15 +7,14 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .color1 {
-  color: var(--color1)
+  color: var(--color1);
 }
 
 /* Header */
-
 header {
   background: url(/assets/images/background.jpg);
   background-size: cover;
@@ -27,4 +26,4 @@ header {
   height: 40%;
 }
 
-/* Navigation */
+/* Navigation *//*# sourceMappingURL=style.css.map */
