@@ -2,6 +2,7 @@
 
 :root {
   --color1: #3643d2;
+  --color2: rgb(179, 3, 255);
 }
 
 body {
@@ -17,14 +18,45 @@ body {
 /* Header */
 
 header {
-  background: linear-gradient(45deg, blue, cyan);
-  background-size: cover;
-  height: 100vh;
-}
-
-.header__logo {
-  margin-top: 10%;
-  height: 40%;
+  background: url(/assets/images/background.jpg);
+  height: 80vh;
 }
 
 /* Navigation */
+
+.nav__icons--circle {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  background-color: #feca6f;
+  transition: all 0.2s linear;
+  opacity: .7;
+
+  .nav__icon {
+    color: rgb(36, 34, 34);
+  }
+
+  &:hover {
+    font-size: 35px;
+    opacity: .9;
+  }
+}
+
+.nav__text {
+  transition: all .3s linear;
+  font-size: 25px;
+}
+
+.nav__text:hover {
+  cursor: pointer;
+  color: #ffa000;
+  -webkit-text-shadow: 2px 2px 2px #000;
+  -moz-text-shadow: 2px 2px 2px #000;
+  text-shadow: 2px 2px 2px #000;
+  opacity: .7;
+}

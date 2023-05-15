@@ -2,6 +2,7 @@
 /* Стандартный сброс, создание переменных и их классов. */
 :root {
   --color1: #3643d2;
+  --color2: rgb(179, 3, 255);
 }
 
 body {
@@ -17,13 +18,41 @@ body {
 /* Header */
 header {
   background: url(/assets/images/background.jpg);
-  background-size: cover;
-  height: 100vh;
+  height: 80vh;
 }
 
-.header__logo {
-  margin-top: 10%;
-  height: 40%;
+/* Navigation */
+.nav__icons--circle {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  background-color: #feca6f;
+  transition: all 0.2s linear;
+  opacity: 0.7;
+}
+.nav__icons--circle .nav__icon {
+  color: rgb(36, 34, 34);
+}
+.nav__icons--circle:hover {
+  font-size: 35px;
+  opacity: 0.9;
 }
 
-/* Navigation *//*# sourceMappingURL=style.css.map */
+.nav__text {
+  transition: all 0.3s linear;
+  font-size: 25px;
+}
+
+.nav__text:hover {
+  cursor: pointer;
+  color: #ffa000;
+  -webkit-text-shadow: 2px 2px 2px #000;
+  -moz-text-shadow: 2px 2px 2px #000;
+  text-shadow: 2px 2px 2px #000;
+  opacity: 0.7;
+}/*# sourceMappingURL=style.css.map */
