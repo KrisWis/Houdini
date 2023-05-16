@@ -43,7 +43,7 @@ header {
   bottom: 15%;
   font-size: 30px;
   text-align: right;
-  background: linear-gradient(to bottom, rgb(236, 82, 236), #fab030, #da9a2a);
+  background: linear-gradient(to left, rgb(248, 109, 248), orange, yellow);
   background-size: contain;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -51,18 +51,22 @@ header {
   text-decoration: none;
 }
 .header__statistics__discord--text span {
-  font-size: 45px;
+  font-size: 50px;
 }
 
 .header__statistics__discord--link {
+  cursor: pointer;
   width: 80px;
   height: 80px;
-  background-color: rgba(195, 195, 195, 0.3);
+  background-color: rgba(247, 157, 251, 0.3);
   position: relative;
   left: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.header__statistics__discord--link:hover {
+  background-color: rgba(247, 157, 251, 0.5);
 }
 
 .header__statistics__discord--icon {
@@ -71,17 +75,19 @@ header {
   height: 70%;
   opacity: 0.7;
   transition: all 0.2s linear;
+  fill: #f7c97a;
+  opacity: 0.7;
 }
 .header__statistics__discord--icon:hover {
   width: 75%;
   height: 75%;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 /* Server's statistics */
 .header__statistics__server--text {
   position: relative;
-  right: 5%;
+  left: 30%;
   top: 5%;
   font-size: 45px;
   background: linear-gradient(to right, #f7c97a, violet);
@@ -93,11 +99,12 @@ header {
 }
 
 .header__statistics__server--link {
+  cursor: pointer;
   width: 80px;
   height: 80px;
-  background-color: rgba(195, 195, 195, 0.3);
+  background-color: rgba(247, 157, 251, 0.3);
   position: relative;
-  right: 10%;
+  right: -28%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,14 +113,29 @@ header {
   transition: all 0.2s linear;
 }
 .header__statistics__server--link i {
-  color: black;
+  color: #f7c97a;
 }
 .header__statistics__server--link:hover {
+  background-color: rgba(247, 157, 251, 0.5);
   font-size: 45px;
-  opacity: 0.9;
+  opacity: 1;
+}
+
+/* Players`s profile */
+.profile__circle__image {
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  margin-left: 2%;
+  margin-bottom: 2%;
 }
 
 /* Navigation */
+.nav__icons {
+  position: relative;
+  left: 10%;
+}
+
 .nav__icons--circle {
   cursor: pointer;
   width: 60px;
@@ -123,7 +145,7 @@ header {
   justify-content: center;
   align-items: center;
   font-size: 30px;
-  background-color: #feca6f;
+  background: linear-gradient(to right, #f7c97a, violet);
   transition: all 0.1s linear;
   opacity: 0.7;
 }
@@ -136,19 +158,44 @@ header {
 }
 
 .nav__text {
-  transition: all 0.3s linear;
+  cursor: pointer;
   font-size: 25px;
   font-weight: 600;
   font-family: "Niconne", cursive;
-  color: #fcd07a;
-  text-shadow: 1px 1px 0px #d6a248, 2px 2px 0px #ff6ee9, 3px 3px 0px #af8336, 4px 4px 0px #b78939;
+  background: linear-gradient(to right, rgb(248, 114, 248), #feb942);
+  background-size: contain;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-decoration: none;
+  position: relative;
 }
-
-.nav__text:hover {
-  cursor: pointer;
-  color: #fab030;
-  -webkit-text-shadow: 2px 2px 2px #000;
-  -moz-text-shadow: 2px 2px 2px #000;
-  text-shadow: 2px 2px 2px #000;
-  opacity: 0.7;
+.nav__text:after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(to left, rgb(249, 76, 249), #ffa305);
+  background-size: contain;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Niconne", cursive;
+  top: 0;
+  left: 0;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+.nav__text:nth-child(1)::after {
+  content: "Главная";
+}
+.nav__text:nth-child(2)::after {
+  content: "Профиль";
+}
+.nav__text:nth-child(3)::after {
+  content: "Выйти";
+}
+.nav__text:hover:after {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
