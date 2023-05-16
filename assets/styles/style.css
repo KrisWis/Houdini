@@ -12,7 +12,7 @@ a:-webkit-any-link {
 
 /* Header */
 header {
-  background: url(../images/background.jpg);
+  background: url(/assets/images/background.jpg);
   background-size: cover;
   height: 80vh;
 }
