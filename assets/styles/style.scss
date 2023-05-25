@@ -1,20 +1,35 @@
+/* Определение шрифтов */
+@font-face {
+  font-family: "Cubic";
+  src: url(../fonts/21072.ttf) format("truetype"),
+    url(../fonts/21072.ttf.woff) format("woff"),
+    url(../fonts/21072.ttf.woff2) format("woff2"),
+    url(../fonts/21072.otf) format("opentype");
+}
+
 /* Стандартный сброс и применение своих стилей. */
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Niconne', cursive;
+  font-family: 'Cubic';
 }
 
 a:-webkit-any-link {
   text-decoration: none;
 }
 
+button {
+  border: none;
+  background: none;
+}
+
 /* Header */
 
 header {
-  background: url(../images/background.jpg);
+  background: url(../images/header_background.jpg);
   background-size: cover;
+  background-attachment: fixed;
   height: 80vh;
 }
 
@@ -40,9 +55,8 @@ header {
 
 .header__statistics__discord--text {
   position: relative;
-  left: 20%;
-  bottom: 15%;
-  font-size: 30px;
+  left: 10%;
+  font-size: 25px;
   text-align: right;
   background: linear-gradient(to left, rgb(248, 109, 248), orange, yellow);
   background-size: contain;
@@ -50,50 +64,38 @@ header {
   background-clip: text;
   -webkit-background-clip: text;
   text-decoration: none;
-
-  span {
-    font-size: 50px;
-  }
-}
-
-.header__statistics__discord--link {
-  cursor: pointer;
-  width: 80px;
-  height: 80px;
-  background-color: rgba(247, 157, 251, 0.3);
-  position: relative;
-  left: 25%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover {
-    background-color: rgba(247, 157, 251, 0.5);
-  }
+  flex-direction: column;
 }
 
 .header__statistics__discord--icon {
   display: block;
-  width: 70%;
-  height: 70%;
-  opacity: .7;
+  width: 9%;
+  height: 9%;
   transition: all .2s linear;
-  fill: #f7c97a;
-  opacity: .7;
+  opacity: .5;
+  position: relative;
+  left: 12%;
+  top: 5%;
 
   &:hover {
-    width: 75%;
-    height: 75%;
-    opacity: 1;
+    width: 9.5%;
+    height: 9.5%;
+    opacity: .8;
   }
 }
 
 /* Server's statistics */
-.header__statistics__server--text {
+.header__statistics__server {
   position: relative;
-  left: 30%;
-  top: 5%;
-  font-size: 45px;
+  right: 5%;
+  top: 20%;
+}
+
+.header__statistics__server--text {
+  position: absolute;
+  right: 10%;
+  font-size: 30px;
   background: linear-gradient(to right, #f7c97a, violet);
   background-size: contain;
   -webkit-text-fill-color: transparent;
@@ -104,36 +106,76 @@ header {
 
 .header__statistics__server--link {
   cursor: pointer;
-  width: 80px;
-  height: 80px;
-  background-color: rgba(247, 157, 251, 0.3);
-  position: relative;
-  right: -28%;
+  position: absolute;
+  left: 37%;
+  bottom: 45%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 40px;
+  font-size: 70px;
   opacity: .7;
   transition: all .2s linear;
 
   i {
-    color: #f7c97a;
+    color: #000;
   }
 
   &:hover {
-    background-color: rgba(247, 157, 251, 0.5);
-    font-size: 45px;
+    font-size: 75px;
     opacity: 1;
   }
 }
 
 /* Players`s profile */
 .profile__circle__image {
-  width: 60%;
+  width: 70%;
   height: 60%;
   border-radius: 50%;
   margin-left: 2%;
   margin-bottom: 2%;
+  outline: none;
+}
+
+.profile__menu {
+  width: 20%;
+  height: 150%;
+  background: linear-gradient(to top, #f7c97a, violet);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  opacity: 0.8;
+  visibility: hidden;
+  position: relative;
+  top: 100%;
+  right: 22.5%;
+  border-radius: 5%;
+
+  a {
+    font-size: 12px;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0%;
+      height: 1px;
+      background-color: #000;
+      transition: all .2s linear;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.profile:focus~.profile__menu {
+  visibility: visible;
 }
 
 /* Navigation */
@@ -151,10 +193,15 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 35px;
   background: linear-gradient(to right, #f7c97a, violet);
   transition: all .1s linear;
   opacity: .7;
+
+  a {
+    position: relative;
+    top: 5%;
+  }
 
   i {
     color: rgb(36, 34, 34);
@@ -170,7 +217,6 @@ header {
   cursor: pointer;
   font-size: 25px;
   font-weight: 600;
-  font-family: 'Niconne', cursive;
   background: linear-gradient(to right, rgb(248, 114, 248), #feb942);
   background-size: contain;
   -webkit-text-fill-color: transparent;
@@ -189,7 +235,6 @@ header {
     -webkit-background-clip: text;
     font-size: 25px;
     font-weight: 600;
-    font-family: 'Niconne', cursive;
     top: 0;
     left: 0;
     width: 0;
