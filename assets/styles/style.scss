@@ -30,6 +30,7 @@ header {
   background: url(../images/header_background.jpg);
   background-size: cover;
   background-attachment: fixed;
+  overflow-x: hidden;
   height: 80vh;
 }
 
@@ -79,8 +80,6 @@ header {
   top: 5%;
 
   &:hover {
-    width: 9.5%;
-    height: 9.5%;
     opacity: .8;
   }
 }
@@ -93,8 +92,8 @@ header {
 }
 
 .header__statistics__server--text {
-  position: absolute;
-  right: 10%;
+  position: relative;
+  left: 37%;
   font-size: 30px;
   background: linear-gradient(to right, #f7c97a, violet);
   background-size: contain;
@@ -104,25 +103,22 @@ header {
   text-decoration: none;
 }
 
-.header__statistics__server--link {
+.header__statistics__server--icon {
+  display: block;
+  width: 9%;
+  height: 9%;
   cursor: pointer;
-  position: absolute;
-  left: 37%;
-  bottom: 45%;
+  position: relative;
+  left: 36%;
+  top: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 70px;
-  opacity: .7;
+  opacity: .5;
   transition: all .2s linear;
 
-  i {
-    color: #000;
-  }
-
   &:hover {
-    font-size: 75px;
-    opacity: 1;
+    opacity: .8;
   }
 }
 
@@ -137,7 +133,6 @@ header {
 }
 
 .profile__menu {
-  width: 20%;
   height: 150%;
   background: linear-gradient(to top, #f7c97a, violet);
   display: flex;
@@ -146,10 +141,11 @@ header {
   justify-content: space-evenly;
   opacity: 0.8;
   visibility: hidden;
-  position: relative;
-  top: 100%;
-  right: 22.5%;
+  position: absolute;
+  top: 110%;
+  right: 41%;
   border-radius: 5%;
+  padding: 3%;
 
   a {
     font-size: 12px;
@@ -182,6 +178,7 @@ header {
 .nav__icons {
   position: relative;
   left: 10%;
+  gap: 5%;
 }
 
 .nav__icons--circle {
@@ -225,7 +222,6 @@ header {
   position: relative;
 
   &:after {
-    content: "";
     position: absolute;
     background: linear-gradient(to left, rgb(249, 76, 249), #ffa305);
     background-size: contain;
@@ -234,7 +230,6 @@ header {
     -webkit-background-clip: text;
     font-size: 25px;
     font-weight: 600;
-    top: 0;
     left: 0;
     width: 0;
     overflow: hidden;
@@ -255,5 +250,159 @@ header {
 
   &:hover:after {
     width: 100%;
+  }
+}
+
+/* Responsive navigation */
+.switcher {
+  position: absolute;
+  visibility: hidden;
+  left: -9999px;
+}
+
+.close,
+.open {
+  cursor: pointer;
+  display: none;
+  font-size: 40px;
+  width: 10%;
+}
+
+
+@media screen and (max-width: 1300px) {
+
+  /* Responsive navigation */
+  .open {
+    position: relative;
+    left: 95%;
+  }
+
+  .open,
+  .close {
+    display: block;
+  }
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .switcher:checked~nav {
+    right: 0;
+  }
+
+  nav {
+    position: fixed;
+    width: 103vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #00537e, #3aa17e);
+    right: -105%;
+    top: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transition: .7s;
+    z-index: 1;
+
+    .nav__text::after {
+      transition: none;
+    }
+  }
+
+  .nav__icons {
+    width: 100%;
+    position: relative;
+    top: 25%;
+    left: 40%;
+    display: flex;
+    gap: 5%;
+  }
+
+  .profile {
+    position: relative;
+    bottom: 1000%;
+    right: 60%;
+  }
+
+  .profile__menu {
+    right: 124%;
+    top: -1190%;
+  }
+
+  /* Header statistics */
+  .header__statistics__discord {
+    flex-direction: column-reverse;
+    position: relative;
+    bottom: 20%;
+    right: 5%;
+
+    .header__statistics__discord--icon {
+      top: -30%;
+      left: 50%;
+    }
+
+    .header__statistics__discord--text {
+      text-align: center;
+      left: 5%;
+    }
+  }
+
+  .header__statistics__server {
+    flex-direction: column-reverse;
+    position: relative;
+    top: 20%;
+    right: 5%;
+
+    .header__statistics__server--text {
+      text-align: center;
+      left: 5%;
+      background: linear-gradient(to right, #f7c97a, rgb(233, 13, 233));
+      background-size: contain;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+  }
+
+  .header__statistics__server--icon {
+    top: -80%;
+    left: 50%;
+  }
+}
+
+
+@media screen and (max-width: 500px) {
+
+  /* Header statistics */
+  .header__statistics {
+    margin-top: 50%;
+  }
+
+  .header__statistics__discord--icon,
+  .header__statistics__server--icon {
+    width: 20%;
+    height: 20%;
+  }
+
+  /* Responsive navigation */
+
+  .profile {
+    right: 70%;
+    bottom: 950%;
+  }
+
+  .profile__menu {
+    right: 100%;
+    top: -840%;
+  }
+
+  .nav__icons {
+    left: 30%;
+    top: 20%;
+  }
+
+  .header__statistics__server--icon {
+    top: -100%;
   }
 }

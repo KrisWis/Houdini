@@ -1,11 +1,9 @@
 @charset "UTF-8";
-
 /* Определение шрифтов */
 @font-face {
   font-family: "Cubic";
   src: url(../fonts/21072.ttf) format("truetype"), url(../fonts/21072.ttf.woff) format("woff"), url(../fonts/21072.ttf.woff2) format("woff2"), url(../fonts/21072.otf) format("opentype");
 }
-
 /* Стандартный сброс и применение своих стилей. */
 body {
   margin: 0;
@@ -23,11 +21,11 @@ button {
 }
 
 /* Header */
-
 header {
   background: url(../images/header_background.jpg);
   background-size: cover;
   background-attachment: fixed;
+  overflow-x: hidden;
   height: 80vh;
 }
 
@@ -76,10 +74,7 @@ header {
   left: 12%;
   top: 5%;
 }
-
 .header__statistics__discord--icon:hover {
-  width: 9.5%;
-  height: 9.5%;
   opacity: 0.8;
 }
 
@@ -91,8 +86,8 @@ header {
 }
 
 .header__statistics__server--text {
-  position: absolute;
-  right: 10%;
+  position: relative;
+  left: 37%;
   font-size: 30px;
   background: linear-gradient(to right, #f7c97a, violet);
   background-size: contain;
@@ -102,26 +97,22 @@ header {
   text-decoration: none;
 }
 
-.header__statistics__server--link {
+.header__statistics__server--icon {
+  display: block;
+  width: 9%;
+  height: 9%;
   cursor: pointer;
-  position: absolute;
-  left: 37%;
-  bottom: 45%;
+  position: relative;
+  left: 36%;
+  top: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 70px;
-  opacity: 0.7;
+  opacity: 0.5;
   transition: all 0.2s linear;
 }
-
-.header__statistics__server--link i {
-  color: #000;
-}
-
-.header__statistics__server--link:hover {
-  font-size: 75px;
-  opacity: 1;
+.header__statistics__server--icon:hover {
+  opacity: 0.8;
 }
 
 /* Players`s profile */
@@ -135,7 +126,6 @@ header {
 }
 
 .profile__menu {
-  width: 20%;
   height: 150%;
   background: linear-gradient(to top, #f7c97a, violet);
   display: flex;
@@ -144,12 +134,12 @@ header {
   justify-content: space-evenly;
   opacity: 0.8;
   visibility: hidden;
-  position: relative;
-  top: 100%;
-  right: 22.5%;
+  position: absolute;
+  top: 110%;
+  right: 41%;
   border-radius: 5%;
+  padding: 3%;
 }
-
 .profile__menu a {
   font-size: 12px;
   color: #000;
@@ -158,7 +148,6 @@ header {
   align-items: center;
   justify-content: center;
 }
-
 .profile__menu a::after {
   content: "";
   display: block;
@@ -167,12 +156,11 @@ header {
   background-color: #000;
   transition: all 0.2s linear;
 }
-
 .profile__menu a:hover::after {
   width: 100%;
 }
 
-.profile:focus~.profile__menu {
+.profile:focus ~ .profile__menu {
   visibility: visible;
 }
 
@@ -180,6 +168,7 @@ header {
 .nav__icons {
   position: relative;
   left: 10%;
+  gap: 5%;
 }
 
 .nav__icons--circle {
@@ -195,16 +184,13 @@ header {
   transition: all 0.1s linear;
   opacity: 0.7;
 }
-
 .nav__icons--circle a {
   position: relative;
   top: 5%;
 }
-
 .nav__icons--circle i {
   color: rgb(36, 34, 34);
 }
-
 .nav__icons--circle:hover {
   font-size: 35px;
   opacity: 0.9;
@@ -222,9 +208,7 @@ header {
   text-decoration: none;
   position: relative;
 }
-
 .nav__text:after {
-  content: "";
   position: absolute;
   background: linear-gradient(to left, rgb(249, 76, 249), #ffa305);
   background-size: contain;
@@ -233,27 +217,149 @@ header {
   -webkit-background-clip: text;
   font-size: 25px;
   font-weight: 600;
-  top: 0;
   left: 0;
   width: 0;
   overflow: hidden;
   transition: all 0.3s linear;
 }
-
 .nav__text:nth-child(1)::after {
   content: "Главная";
 }
-
 .nav__text:nth-child(2)::after {
   content: "Профиль";
 }
-
 .nav__text:nth-child(3)::after {
   content: "Выйти";
 }
-
 .nav__text:hover:after {
   width: 100%;
 }
 
-/*# sourceMappingURL=style.css.map */
+/* Responsive navigation */
+.switcher {
+  position: absolute;
+  visibility: hidden;
+  left: -9999px;
+}
+
+.close,
+.open {
+  cursor: pointer;
+  display: none;
+  font-size: 40px;
+  width: 10%;
+}
+
+@media screen and (max-width: 1300px) {
+  /* Responsive navigation */
+  .open {
+    position: relative;
+    left: 95%;
+  }
+  .open,
+  .close {
+    display: block;
+  }
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .switcher:checked ~ nav {
+    right: 0;
+  }
+  nav {
+    position: fixed;
+    width: 103vw;
+    height: 100vh;
+    background: linear-gradient(180deg, #00537e, #3aa17e);
+    right: -105%;
+    top: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    transition: 0.7s;
+    z-index: 1;
+  }
+  nav .nav__text::after {
+    transition: none;
+  }
+  .nav__icons {
+    width: 100%;
+    position: relative;
+    top: 25%;
+    left: 40%;
+    display: flex;
+    gap: 5%;
+  }
+  .profile {
+    position: relative;
+    bottom: 1000%;
+    right: 60%;
+  }
+  .profile__menu {
+    right: 124%;
+    top: -1190%;
+  }
+  /* Header statistics */
+  .header__statistics__discord {
+    flex-direction: column-reverse;
+    position: relative;
+    bottom: 20%;
+    right: 5%;
+  }
+  .header__statistics__discord .header__statistics__discord--icon {
+    top: -30%;
+    left: 50%;
+  }
+  .header__statistics__discord .header__statistics__discord--text {
+    text-align: center;
+    left: 5%;
+  }
+  .header__statistics__server {
+    flex-direction: column-reverse;
+    position: relative;
+    top: 20%;
+    right: 5%;
+  }
+  .header__statistics__server .header__statistics__server--text {
+    text-align: center;
+    left: 5%;
+    background: linear-gradient(to right, #f7c97a, rgb(233, 13, 233));
+    background-size: contain;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  .header__statistics__server--icon {
+    top: -80%;
+    left: 50%;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* Header statistics */
+  .header__statistics {
+    margin-top: 50%;
+  }
+  .header__statistics__discord--icon,
+  .header__statistics__server--icon {
+    width: 20%;
+    height: 20%;
+  }
+  /* Responsive navigation */
+  .profile {
+    right: 70%;
+    bottom: 950%;
+  }
+  .profile__menu {
+    right: 100%;
+    top: -840%;
+  }
+  .nav__icons {
+    left: 30%;
+    top: 20%;
+  }
+  .header__statistics__server--icon {
+    top: -100%;
+  }
+}/*# sourceMappingURL=style.css.map */
