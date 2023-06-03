@@ -250,11 +250,12 @@ header {
   width: 10%;
 }
 
+/* Responsive Design */
 @media screen and (max-width: 1300px) {
   /* Responsive navigation */
   .open {
     position: relative;
-    left: 95%;
+    left: 90%;
   }
   .open,
   .close {
@@ -268,6 +269,7 @@ header {
   .switcher:checked ~ nav {
     right: 0;
   }
+  /* Navigation */
   nav {
     position: fixed;
     width: 103vw;
@@ -278,8 +280,12 @@ header {
     text-align: center;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     transition: 0.7s;
     z-index: 1;
+  }
+  nav .nav__texts {
+    flex-direction: column;
   }
   nav .nav__text::after {
     transition: none;
@@ -288,18 +294,19 @@ header {
     width: 100%;
     position: relative;
     top: 25%;
-    left: 40%;
+    left: 42%;
     display: flex;
     gap: 5%;
   }
+  /* Profile */
   .profile {
-    position: relative;
-    bottom: 1000%;
-    right: 60%;
+    position: absolute;
+    bottom: 1150%;
+    right: 130%;
   }
   .profile__menu {
-    right: 124%;
-    top: -1190%;
+    right: 125%;
+    top: -1040%;
   }
   /* Header statistics */
   .header__statistics__discord {
@@ -309,8 +316,10 @@ header {
     right: 5%;
   }
   .header__statistics__discord .header__statistics__discord--icon {
+    width: 13%;
     top: -30%;
     left: 50%;
+    margin-bottom: 1%;
   }
   .header__statistics__discord .header__statistics__discord--text {
     text-align: center;
@@ -319,7 +328,7 @@ header {
   .header__statistics__server {
     flex-direction: column-reverse;
     position: relative;
-    top: 20%;
+    top: 10%;
     right: 5%;
   }
   .header__statistics__server .header__statistics__server--text {
@@ -332,34 +341,185 @@ header {
     -webkit-background-clip: text;
   }
   .header__statistics__server--icon {
+    width: 15%;
     top: -80%;
     left: 50%;
   }
 }
-@media screen and (max-width: 500px) {
-  /* Header statistics */
-  .header__statistics {
-    margin-top: 50%;
+@media screen and (max-width: 1025px) {
+  /* Profile */
+  .profile {
+    bottom: 900%;
   }
+  .profile__menu {
+    top: -790%;
+    right: 126%;
+  }
+  /* Navigation */
+  .nav__icons {
+    top: 20%;
+    left: 41%;
+  }
+  /* Header statistics */
   .header__statistics__discord--icon,
   .header__statistics__server--icon {
-    width: 20%;
-    height: 20%;
+    width: 13%;
+    height: 13%;
+  }
+}
+@media screen and (max-width: 920px) {
+  /* Header Statistics */
+  .header__statistics {
+    height: 20vh;
+  }
+  .header__statistics .header__statistics__discord--text,
+  .header__statistics .header__statistics__server--text {
+    font-size: 45px;
+  }
+  .header__statistics .header__statistics__server--text {
+    left: 8%;
+  }
+  .header__statistics .header__statistics__discord--icon,
+  .header__statistics .header__statistics__server--icon {
+    width: 13%;
+    height: 13%;
+    margin-bottom: 1%;
+  }
+  /* Profile */
+  .profile {
+    bottom: 1700%;
+  }
+  .profile__menu {
+    top: -1590%;
+  }
+}
+@media screen and (max-width: 850px) {
+  /* Header Statistics */
+  .header__statistics {
+    height: 20vh;
+  }
+  .header__statistics .header__statistics__discord--text,
+  .header__statistics .header__statistics__server--text {
+    font-size: 45px;
+  }
+  .header__statistics .header__statistics__server--text {
+    left: 8%;
+  }
+  .header__statistics .header__statistics__discord--icon,
+  .header__statistics .header__statistics__server--icon {
+    width: 15%;
+    height: 15%;
+  }
+  /* Profile */
+  .profile {
+    bottom: 1550%;
+  }
+  .profile__menu {
+    right: 122%;
+    top: -1445%;
+  }
+}
+@media screen and (max-width: 770px) {
+  /* Profile */
+  .profile {
+    bottom: 1350%;
+  }
+  .profile__menu {
+    right: 123%;
+    top: -1240%;
+  }
+}
+@media screen and (max-width: 550px) {
+  /* Header statistics */
+  .header__statistics {
+    margin-top: 10%;
+  }
+  .header__statistics .header__statistics__discord--icon,
+  .header__statistics .header__statistics__server--icon {
+    width: 15%;
+    height: 15%;
+  }
+  .header__statistics .header__statistics__discord--text,
+  .header__statistics .header__statistics__server--text {
+    font-size: 30px;
   }
   /* Responsive navigation */
   .profile {
-    right: 70%;
-    bottom: 950%;
+    right: 115%;
+    bottom: 1000%;
   }
   .profile__menu {
-    right: 100%;
-    top: -840%;
+    right: 108%;
+    top: -895%;
   }
   .nav__icons {
-    left: 30%;
+    left: 35%;
     top: 20%;
   }
   .header__statistics__server--icon {
     top: -100%;
+  }
+}
+@media screen and (max-width: 415px) {
+  /* Header statistics */
+  .header__statistics {
+    margin-top: 10%;
+    margin-right: 5%;
+  }
+  .header__statistics .header__statistics__discord--text,
+  .header__statistics .header__statistics__server--text {
+    left: 10%;
+  }
+  .header__statistics .header__statistics__server--icon,
+  .header__statistics .header__statistics__discord--icon {
+    width: 20%;
+  }
+  .header__statistics .header__statistics__discord {
+    bottom: -25%;
+  }
+  .header__statistics .header__statistics__server {
+    top: 70%;
+  }
+  /* Profile */
+  .profile {
+    bottom: 1180%;
+    right: 115%;
+  }
+  .profile__menu {
+    top: -1060%;
+    right: 109%;
+  }
+}
+@media screen and (max-width: 380px) {
+  /* Header statistics */
+  .header__statistics {
+    margin-top: -5%;
+  }
+  .header__statistics .header__statistics__server {
+    right: 5%;
+    top: 90%;
+  }
+  .header__statistics .header__statistics__server .header__statistics__server--text {
+    left: 10%;
+  }
+  .header__statistics__discord .header__statistics__discord--icon {
+    top: -15%;
+    left: 49%;
+  }
+  /* Profile */
+  .profile {
+    right: 100%;
+    bottom: 960%;
+  }
+  .profile__menu {
+    top: -850%;
+    right: 90%;
+  }
+  /* Navigation */
+  .nav__icons {
+    left: 30%;
+  }
+  nav {
+    width: 105vw;
   }
 }/*# sourceMappingURL=style.css.map */
