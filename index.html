@@ -41,14 +41,15 @@
               <i class="fa fa-github"></i>
             </a>
           </div>
-          <button class="nav__icons--circle profile" tabindex="0">
+          <label class="nav__icons--circle profile" tabindex="0">
+            <input type="checkbox">
             <img src="./assets/images/logo.png" alt="Твой профиль" class="profile__circle__image">
-          </button>
-          <div class="profile__menu">
-            <a href="#">Профиль</a>
-            <a href="#">Настройки</a>
-            <a href="#">Выход</a>
-          </div>
+            <div class="profile__menu">
+              <a href="#">Профиль</a>
+              <a href="#">Настройки</a>
+              <a href="#">Выход</a>
+            </div>
+          </label>
         </div>
         <label class="close" for="menu">
           <i class="fa fa-times"></i>
@@ -78,15 +79,26 @@
 
   <main>
     <div class="container-fluid">
-      <div class="row news d-flex justify-content-evenly">
+      <div class="row news--caption">
+        <div class="col-12 text-uppercase">
+          <h2>Новости сервера</h2>
+        </div>
+      </div>
+      <div class="row news d-flex">
+        <button class="col-xl-1 news--chevron_left">
+          <i class="fa fa-chevron-left"></i>
+        </button>
+        <button class="col-xl-1 news--chevron_right">
+          <i class="fa fa-chevron-right"></i>
+        </button>
         <div class="col-xl-3 col-lg-12 news__card">
           <figure>
             <img src="./assets/images/news__card__image_1.jpg" alt="Карточка новостей" class="news__card--image">
             <figcaption>
-              <time class="news__card--date">2023-01-26</time>
-              <h3 class="news__card--caption">Рассвет</h3>
-              <p class="news__card--description">Только на Houdini такой красивый рассвет!</p>
-              <a class="news__card--read_more" href="#">
+              <time class="news__card--date">2021-11-21</time>
+              <h3 class="news__card--caption">Outside The System</h3>
+              <p class="news__card--description">Окунитесь в ярость битвы в первом режиме KrisKras'а!</p>
+              <a class="news__card--read_more" href="https://workshop.codes/6CV0W">
                 <i class="fa fa-pencil-square"></i>
                 <p>Читать далее</p>
               </a>
@@ -97,10 +109,10 @@
           <figure>
             <img src="./assets/images/news__card__image_2.jpg" alt="Карточка новостей" class="news__card--image">
             <figcaption>
-              <time class="news__card--date">2023-03-14</time>
-              <h3 class="news__card--caption">День</h3>
-              <p class="news__card--description">Только на Houdini такой красивый день!</p>
-              <a class="news__card--read_more" href="#">
+              <time class="news__card--date">2021-12-05</time>
+              <h3 class="news__card--caption">KrisKras's universe</h3>
+              <p class="news__card--description">Зайдите на Discord сервер легендарного разработчика!</p>
+              <a class="news__card--read_more" href="https://discord.gg/fVG4acjRP9">
                 <i class="fa fa-pencil-square"></i>
                 <p>Читать далее</p>
               </a>
@@ -111,10 +123,52 @@
           <figure>
             <img src="./assets/images/news__card__image_3.jpg" alt="Карточка новостей" class="news__card--image">
             <figcaption>
-              <time class="news__card--date">2023-09-07</time>
-              <h3 class="news__card--caption">Ночь</h3>
-              <p class="news__card--description">Только на Houdini такая красивая ночь!</p>
-              <a class="news__card--read_more" href="#">
+              <time class="news__card--date">2022-12-17</time>
+              <h3 class="news__card--caption">Rush Hour</h3>
+              <p class="news__card--description">Уничтожьте всех злодеев...не являетесь ли вы одним из них?</p>
+              <a class="news__card--read_more" href="https://workshop.codes/2DCJMM">
+                <i class="fa fa-pencil-square"></i>
+                <p>Читать далее</p>
+              </a>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-xl-3 col-lg-12 news__card">
+          <figure>
+            <img src="./assets/images/news__card__image_4.jpg" alt="Карточка новостей" class="news__card--image">
+            <figcaption>
+              <time class="news__card--date">2021-11-06</time>
+              <h3 class="news__card--caption">Kuzma</h3>
+              <p class="news__card--description">Познакомься с предком величайшего сервера Houdini!</p>
+              <a class="news__card--read_more" href="https://discord.com/channels/842719546161889320/842720246338027541">
+                <i class="fa fa-pencil-square"></i>
+                <p>Читать далее</p>
+              </a>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-xl-3 col-lg-12 news__card">
+          <figure>
+            <img src="./assets/images/news__card__image_5.jpg" alt="Карточка новостей" class="news__card--image">
+            <figcaption>
+              <time class="news__card--date">2021-02-03</time>
+              <h3 class="news__card--caption">RPG && Quests!</h3>
+              <p class="news__card--description">Поучаствуйте в невероятно крутом РПГ-режиме от Zensonaton!</p>
+              <a class="news__card--read_more" href="https://workshop.codes/GMSKS">
+                <i class="fa fa-pencil-square"></i>
+                <p>Читать далее</p>
+              </a>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="col-xl-3 col-lg-12 news__card">
+          <figure>
+            <img src="./assets/images/news__card__image_6.jpg" alt="Карточка новостей" class="news__card--image">
+            <figcaption>
+              <time class="news__card--date">2020-02-11</time>
+              <h3 class="news__card--caption">Zensonaton's Github</h3>
+              <p class="news__card--description">Просмотрите страничку на Github создателя Houdini!</p>
+              <a class="news__card--read_more" href="https://github.com/Zensonaton">
                 <i class="fa fa-pencil-square"></i>
                 <p>Читать далее</p>
               </a>
